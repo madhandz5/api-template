@@ -1,0 +1,39 @@
+server:
+  port: 8080
+  servlet:
+    context-path: /
+
+spring:
+  profiles:
+    active: dev
+
+  jpa:
+    open-in-view: false
+    properties:
+      hibernate:
+        default_batch_fetch_size: 500
+
+  servlet:
+    multipart:
+      max-file-size: 10MB
+      max-request-size: 100MB
+
+feign:
+  client:
+    config:
+      default:
+        connectTimeout: 5000
+        readTimeout: 5000
+
+
+app:
+  properties:
+    kakao:
+      client:
+        id: 8114b87beab51807bbe2a4445f79a597
+        secret: fh0COAnwjDMKRI1XgflkWc3Jg2VY472r
+
+    jwt:
+      secret: RyanOhRyanOh03123XDF=HOHcHanGYoung
+      access-token-expiration-time: 900000 # 15min
+      refresh-token-expiration-time: 1209600000 # 2 weeks
