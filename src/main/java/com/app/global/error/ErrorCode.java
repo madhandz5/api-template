@@ -13,7 +13,8 @@ public enum ErrorCode {
     NOT_VALID_BEARER_GRANT_TYPE(HttpStatus.UNAUTHORIZED, "A-004", "Grant type is not bearer"),
 
     //    Member
-    INVALID_MEMBER_TYPE(HttpStatus.BAD_REQUEST, "M-001", "Wrong Member Type");
+    INVALID_MEMBER_TYPE(HttpStatus.BAD_REQUEST, "M-001", "Wrong Member Type"),
+    ALREADY_REGISTERED_MEMBER(HttpStatus.BAD_REQUEST, "M-002", "Already Exists Member");
 
     ErrorCode(HttpStatus httpStatus, String errorCode, String message) {
         this.httpStatus = httpStatus;

@@ -28,6 +28,4 @@ public class OAuthLoginController {
         OAuthLoginDTO.Response response = oAuthLoginService.oAuthLogin(accessToken, MemberType.from(request.getMemberType()));
         return ResponseEntity.ok(response);
     }
-
-
 }

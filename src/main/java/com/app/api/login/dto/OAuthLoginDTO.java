@@ -1,5 +1,6 @@
 package com.app.api.login.dto;
 
+import com.app.global.jwt.dto.JwtTokenDTO;
 import com.fasterxml.jackson.annotation.JsonFormat;
 import lombok.Builder;
 import lombok.Data;
@@ -23,6 +24,17 @@ public class OAuthLoginDTO {
         private String refreshToken;
         @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd HH:mm:ss")
         private Date refreshTokenExpireTime;
+
+        public static Response of(JwtTokenDTO jwtTokenDTO) {
+            return Response.builder()
+                    .grantType(jwtTokenDTO.getGrantType())
+                    .accessToken(jwtTokenDTO.getAccessToken())
+                    .accessTokenExpireTime(jwtTokenDTO.getAccessTokenExpireTime())
+                    .refreshToken(jwtTokenDTO.getRefreshToken())
+                    .refreshTokenExpireTime(jwtTokenDTO.getRefreshTokenExpireTime())
+                    .build();
+        }
+
     }
 
 }
