@@ -21,6 +21,4 @@ public class SecurityConfig {
     public TokenManager tokenManager() {
         return new TokenManager(accessTokenExpirationTime, refreshTokenExpirationTime, secret);
     }
-
-
 }

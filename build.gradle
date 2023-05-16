@@ -6,7 +6,7 @@ plugins {
 
 group = 'com.app'
 version = '0.0.1-SNAPSHOT'
-sourceCompatibility = '11'
+sourceCompatibility = JavaVersion.VERSION_11
 
 configurations {
     compileOnly {
@@ -31,6 +31,7 @@ dependencies {
 
 //    Spring Cloud : Open Feign
     implementation 'org.springframework.cloud:spring-cloud-starter-openfeign'
+
 //      JWT
     implementation 'io.jsonwebtoken:jjwt:0.9.1'
 
